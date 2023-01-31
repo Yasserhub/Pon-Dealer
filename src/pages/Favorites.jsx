@@ -4,8 +4,6 @@ import allCarsBrands from "../cars-data/all-CarsBrands";
 import ViewCars from '../view/ViewCars';
 
 
-
-
 const Favorites = () => {
   
   
