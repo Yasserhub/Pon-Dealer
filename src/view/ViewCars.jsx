@@ -22,13 +22,13 @@ const Car = ({car})=> {
             <div className="car-model">Price:</div>
             <div className="car-price">€ {price}</div>
           </div>
-          <Link to={`/car/${id}`}>
+          
           <div className="icon-more-info">
 
-          <button className="button">See the details</button>
+          <button className="button" onChange={`/car/${id}`}>See the details</button>
           <Heart id={id} />
           </div>
-          </Link>
+       
 
         </div>
         )}
