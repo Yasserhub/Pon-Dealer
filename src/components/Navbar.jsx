@@ -1,8 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { provideContext } from "../hooks/context"
 import { useContext } from "react";
-
-// import Search from './Search';
+import Search from "../pages/Search"
 
 const Navbar = () => {
   const { clearFilter, filterCars } = useContext(provideContext);
@@ -64,7 +63,7 @@ const Navbar = () => {
               </li>
               
               <li className="nav-item">
-                <NavLink to="/search" className="nav-link">
+                <NavLink to="/contact" className="nav-link">
                   Contact
                 </NavLink>
               </li>
@@ -80,6 +79,7 @@ const Navbar = () => {
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
+                onChange={()=><Search />} 
               />
               <button className="btn btn-outline-success" type="submit">
                 Search
