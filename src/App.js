@@ -6,6 +6,7 @@ import CarDetails from "./pages/CarDetails";
 import Favorites from "./pages/Favorites";
 import "./App.css";
 import Footer from "./components/Footer";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Cars />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/car/:id" element={<CarDetails />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
       </BrowserRouter>
