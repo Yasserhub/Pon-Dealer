@@ -1,26 +1,25 @@
-import {NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { provideContext } from "../hooks/context";
+import { useContext } from "react";
+
 const Footer = () => {
+  const { filterCars } = useContext(provideContext);
   return (
     <div>
-      {/* <!-- Footer --> */}
-      <footer class="text-center text-lg-start bg-dark text-white">
-        {/* <!-- Section: Social media --> */}
-        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-          {/* <!-- Left --> */}
-          <div class="me-5 d-none d-lg-block">
+      <footer className="text-center text-lg-start bg-dark text-white">
+        <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+          <div className="me-5 d-none d-lg-block">
             <span>Get connected with us on social networks:</span>
           </div>
-          {/* <!-- Left -->
 
-    <!-- Right --> */}
           <div>
             <NavLink to="/" className="me-4 link-secondary">
-              <i class="fab fa-facebook-f"></i>
+              <i className="fab fa-facebook-f"></i>
             </NavLink>
             <NavLink to="/" className="me-4 link-secondary">
               <i className="fab fa-twitter"></i>
             </NavLink>
-            <NavLink to="/"  className="me-4 link-secondary">
+            <NavLink to="/" className="me-4 link-secondary">
               <i className="fab fa-google"></i>
             </NavLink>
             <NavLink to="/" className="me-4 link-secondary">
@@ -33,125 +32,89 @@ const Footer = () => {
               <i className="fab fa-github"></i>
             </NavLink>
           </div>
-          {/* <!-- Right --> */}
         </section>
-        {/* <!-- Section: Social media --> */}
 
-        {/* <!-- Section: Links  --> */}
         <section className="">
-          <div class="container text-center text-md-start mt-5">
-            {/* <!-- Grid row --> */}
-            <div class="row mt-3">
-              {/* <!-- Grid column --> */}
-              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                {/* <!-- Content --> */}
-                <h6 class="text-uppercase fw-bold mb-4">
-                  <i class="fas fa-gem me-3 text-secondary"></i>Company name
-                </h6>
-                <p>
-                  Here you can use rows and columns to organize your footer
-                  content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                  elit.
-                </p>
+          <div className="container text-center text-md-start mt-5">
+            <div className="row mt-3">
+              <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <div className="logo" to="/">
+                  {" "}
+                  <img
+                    src="https://res.cloudinary.com/diyopzdxb/image/upload/v1675122320/cars-images/logo_acnp6h.png"
+                    alt="logo"
+                    height="40"
+                    width="200"
+                  ></img>
+                </div>
               </div>
-              {/* <!-- Grid column -->
 
-        <!-- Grid column --> */}
-              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                {/* <!-- Links --> */}
-                <h6 class="text-uppercase fw-bold mb-4">Products</h6>
+              <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <h6 className="text-uppercase fw-bold mb-4">Our Brands</h6>
                 <p>
-                  <NavLink to="/" class="text-reset">
-                    Angular
+                  <NavLink
+                    to="/"
+                    className="text-reset"
+                    onClick={(e) => filterCars(e, "Volkswagen")}
+                  >
+                    Volkswagen
                   </NavLink>
                 </p>
                 <p>
-                  <NavLink to="/" class="text-reset">
-                    React
+                  <NavLink
+                    to="/"
+                    className="text-reset"
+                    onClick={(e) => filterCars(e, "ŠKODA")}
+                  >
+                    ŠKODA
                   </NavLink>
                 </p>
                 <p>
-                  <NavLink to="/" class="text-reset">
-                    Vue
+                  <NavLink
+                    to="/"
+                    className="text-reset"
+                    onClick={(e) => filterCars(e, "Audi")}
+                  >
+                    Audi
                   </NavLink>
                 </p>
                 <p>
-                  <NavLink to="/" class="text-reset">
-                    Laravel
+                  <NavLink
+                    to="/"
+                    className="text-reset"
+                    onClick={(e) => filterCars(e, "Seat")}
+                  >
+                    Seat
                   </NavLink>
                 </p>
               </div>
-              {/* <!-- Grid column -->
 
-        <!-- Grid column --> */}
-              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                {/* <!-- Links --> */}
-                <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
+              <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
                 <p>
-                  <NavLink to="/" class="text-reset">
-                    Pricing
-                  </NavLink>
+                  <i className="fas fa-home me-3 text-secondary"></i>{" "}
+                  Amersfoort, Netherlands
                 </p>
                 <p>
-                  <NavLink to="/" class="text-reset">
-                    Settings
-                  </NavLink>
+                  <i className="fas fa-envelope me-3 text-secondary"></i>
+                  info@pondealer.nl
                 </p>
                 <p>
-                  <NavLink to="/" class="text-reset">
-                    Orders
-                  </NavLink>
-                </p>
-                <p>
-                  <NavLink to="/" class="text-reset">
-                    Help
-                  </NavLink>
+                  <i className="fas fa-phone me-3 text-secondary"></i> + 31 085
+                  019 2720 88
                 </p>
               </div>
-              {/* <!-- Grid column -->
-
-        <!-- Grid column --> */}
-              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                {/* <!-- Links --> */}
-                <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-                <p>
-                  <i class="fas fa-home me-3 text-secondary"></i> New York, NY
-                  10012, US
-                </p>
-                <p>
-                  <i class="fas fa-envelope me-3 text-secondary"></i>
-                  info@example.com
-                </p>
-                <p>
-                  <i class="fas fa-phone me-3 text-secondary"></i> + 01 234 567
-                  88
-                </p>
-                <p>
-                  <i class="fas fa-print me-3 text-secondary"></i> + 01 234 567
-                  89
-                </p>
-              </div>
-              {/* <!-- Grid column --> */}
             </div>
-            {/* <!-- Grid row --> */}
           </div>
         </section>
-        {/* <!-- Section: Links  -->
 
-  <!-- Copyright --> */}
-        <div
-          class="text-center p-4"
-          
-        >
-            {/* style="background-color: rgba(0, 0, 0, 0.025);" */}
-          © 2021 Copyright:
-          <NavLink to="/"  class="text-reset fw-bold">
-            MDBootstrap.com
+        <div className="text-center p-4">
+          © 2023 Copyright:
+          <NavLink to="/" className="text-reset fw-bold">
+            pondealer.nl
           </NavLink>
         </div>
-        {/* <!-- Copyright --> */}
       </footer>
-      {/* <!-- Footer --> */}
     </div>
   );
 };
